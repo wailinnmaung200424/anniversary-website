@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #ff9fba, #b99cff);
+}
+
+.page {
+    width: 90%;
+}
+
+#page2,
+#page3,
+#page4,
+#page5 {
+    display: none;
+}
+
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 20px;
+    background: #ff5f91;
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.story {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.story2 {
+    opacity: 0;
+    animation: fadeIn 2s 1.5s forwards;
+}
+
+.story3 {
+    opacity: 0;
+    animation: fadeIn 2s 3s forwards;
+}
+
+.continue {
+    opacity: 0;
+    animation: fadeIn 2s 4.5s forwards;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.heart {
+    font-size: 50px;
+    animation: heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   PAGE 5 - MEMORIES
+========================= */
+
+#page5 {
+    width: 90%;
+}
+
+.memory-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.memory-photo {
+    width: 90%;
+    max-width: 350px;
+    max-height: 55vh;
+    object-fit: cover;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+
+    opacity: 0;
+
+    animation:
+        photoIn 1.5s forwards;
+}
+
+@keyframes photoIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.memory-text {
+    font-size: 18px;
+    margin-top: 15px;
+
+    opacity: 0;
+
+    animation:
+        fadeIn 2s 0.5s forwards;
+}
+
+.music-note {
+    font-size: 30px;
+    margin-bottom: 10px;
+
+    animation:
+        musicMove 1s infinite;
+}
+
+@keyframes musicMove {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<div id="page1" class="page">
+
+    <h1>
+        အသဲတုံးလေးရေ 💗
+    </h1>
+
+    <p>
+        Enter our anni date 💕
+    </p>
+
+    <input
+        id="pass"
+        type="password"
+        placeholder="Password"
+    >
+
+    <br>
+
+    <button onclick="checkPassword()">
+        Open 💌
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<div id="page2" class="page">
+
+    <div class="heart">
+        ❤️
+    </div>
+
+    <h1>
+        ကိုကိုတို့ရဲ့ကမ္ဘာငယ်လေးကနေကြိုဆိုပါတယ်❤️
+    </h1>
+
+    <p>
+        Welcome to our special place
+    </p>
+
+    <button onclick="startStory()">
+        Read Story 💕
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     PAGE 3
+========================= -->
+
+<div id="page3" class="page">
+
+    <div class="heart">
+        💗
+    </div>
+
+    <h1 class="story">
+
+        အသဲတုံး​လေး​ရေ ၂ နှစ်တိတိ
+        ရန်ဖြစ်လိုက်ရူးလိုက်နဲ့
+        ဒီအချိန်ထိ​တောင်​ရောက်လာပြီခဲ့ပြီ​နော်.
+
+    </h1>
+
+    <p class="story2">
+
+        ၂ နှစ်ထက်မက
+        ဒီထက်များက်ြီးချစ်​ပေးပါအုံး​နော်
+        ​နောင်ဆယ်နှစ် နှစ်တစ်ရာ
+        ​နောင်ဘဝဆက်တိုင်း
+        ချစ်​နေမယ်​နော်
+        အသဲတုံး​လေး ❤️
+
+    </p>
+
+    <p class="story3">
+
+        ကိုကို့်​ပေါ်လည်း
+        ​နေရာတကာ ခွင့်လွှတ်ပီး
+        ချစ်​​နေ​ပေးလို့
+        ​ကျေးဇူးတင်ပါတယ်🥺💕
+
+    </p>
+
+    <button
+        class="continue"
+        onclick="nextPage()"
+    >
+
+        Continue ❤️
+
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     PAGE 4
+========================= -->
+
+<div id="page4" class="page">
+
+    <div class="heart">
+        💞
+    </div>
+
+    <h1 class="story">
+
+        ဒီနှစ်နှစ်အတွင်းမှာ ❤️
+
+    </h1>
+
+    <p class="story2">
+
+        ပျော်ခဲ့တဲ့အချိန်တွေရှိသလို<br>
+
+        ရန်ဖြစ်ခဲ့တဲ့အချိန်တွေလည်း
+        ရှိခဲ့တယ်နော် 🥺
+
+    </p>
+
+    <p class="story3">
+
+        ဒါပေမယ့် ဘာတွေဖြစ်ဖြစ်<br>
+
+        ကိုကို့ဘေးမှာ
+        အသဲတုံးလေးရှိနေပေးတာက<br>
+
+        ကိုကို့အတွက်
+        အရေးကြီးဆုံးပါပဲ ❤️
+
+    </p>
+
+    <button
+        class="continue"
+        onclick="openMemories()"
+    >
+
+        Our Memories 📸
+
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     PAGE 5
+     OUR MEMORIES
+========================= -->
+
+<div id="page5" class="page">
+
+    <div class="music-note">
+        🎵 ❤️ 🎵
+    </div>
+
+    <h1 class="memory-title">
+        Our Memories ❤️
+    </h1>
+
+    <img
+        id="memoryPhoto"
+        class="memory-photo"
+        src="photo1.jpg"
+    >
+
+    <p
+        id="memoryText"
+        class="memory-text"
+    >
+
+        ကိုကိုတို့ရဲ့
+        အမှတ်တရလေးတွေ ❤️
+
+    </p>
+
+    <button onclick="nextMemory()">
+        Next Memory 💕
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio
+    id="bgMusic"
+    loop
+>
+
+    <source
+        src="song.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<script>
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+function checkPassword() {
+
+    let password =
+        document.getElementById("pass").value;
+
+    if (password === "1782024") {
+
+        document.getElementById("page1").style.display =
+            "none";
+
+        document.getElementById("page2").style.display =
+            "block";
+
+    } else {
+
+        alert("Wrong password 🥺");
+
+    }
+
+}
+
+
+
+/* =========================
+   PAGE 2 → PAGE 3
+========================= */
+
+function startStory() {
+
+    document.getElementById("page2").style.display =
+        "none";
+
+    document.getElementById("page3").style.display =
+        "block";
+
+}
+
+
+
+/* =========================
+   PAGE 3 → PAGE 4
+========================= */
+
+function nextPage() {
+
+    document.getElementById("page3").style.display =
+        "none";
+
+    document.getElementById("page4").style.display =
+        "block";
+
+}
+
+
+
+/* =========================
+   PAGE 4 → PAGE 5
+   MUSIC START
+========================= */
+
+function openMemories() {
+
+    document.getElementById("page4").style.display =
+        "none";
+
+    document.getElementById("page5").style.display =
+        "block";
+
+
+    let music =
+        document.getElementById("bgMusic");
+
+
+    music.play().catch(function(error) {
+
+        console.log(
+            "Music could not start:",
+            error
+        );
+
+    });
+
+}
+
+
+
+/* =========================
+   10 MEMORY PHOTOS
+========================= */
+
+let memories = [
+
+    {
+        photo: "photo1.jpg",
+        text: "ကိုကိုတို့ရဲ့ ပထမဆုံးအမှတ်တရလေး ❤️"
+    },
+
+    {
+        photo: "photo2.jpg",
+        text: "အတူတူရှိခဲ့တဲ့ ပျော်စရာအချိန်လေး 🥺💕"
+    },
+
+    {
+        photo: "photo3.jpg",
+        text: "ဒီလိုအချိန်လေးတွေကို အမြဲမှတ်ထားမယ် ❤️"
+    },
+
+    {
+        photo: "photo4.jpg",
+        text: "အတူတူဖြတ်သန်းခဲ့တဲ့ နေ့ရက်လေး ❤️"
+    },
+
+    {
+        photo: "photo5.jpg",
+        text: "အသဲတုံးလေးနဲ့အတူ ရှိခဲ့တဲ့အချိန်တိုင်းက အမှတ်တရပါ 💕"
+    },
+
+    {
+        photo: "photo6.jpg",
+        text: "ပျော်စရာလေးတွေကို အမြဲသတိရနေမယ် 🥺❤️"
+    },
+
+    {
+        photo: "photo7.jpg",
+        text: "ကိုကိုတို့ရဲ့ ချစ်စရာအမှတ်တရလေး 💗"
+    },
+
+    {
+        photo: "photo8.jpg",
+        text: "ဘယ်လောက်ကြာကြာ အတူတူရှိနေမယ်နော် ❤️"
+    },
+
+    {
+        photo: "photo9.jpg",
+        text: "ဒီအချိန်လေးကို ဘယ်တော့မှမမေ့ဘူး 🥺💕"
+    },
+
+    {
+        photo: "photo10.jpg",
+        text: "နောက်ထပ်နှစ်တွေများစွာလည်း အတူတူဖြတ်သန်းကြမယ် ❤️"
+    }
+
+];
+
+
+let currentMemory = 0;
+
+
+
+/* =========================
+   NEXT MEMORY
+========================= */
+
+function nextMemory() {
+
+    currentMemory++;
+
+
+    if (
+        currentMemory >= memories.length
+    ) {
+
+        currentMemory = 0;
+
+    }
+
+
+    let photo =
+        document.getElementById("memoryPhoto");
+
+    let text =
+        document.getElementById("memoryText");
+
+
+    photo.style.animation = "none";
+
+    text.style.animation = "none";
+
+
+    setTimeout(function() {
+
+        photo.src =
+            memories[currentMemory].photo;
+
+        text.innerHTML =
+            memories[currentMemory].text;
+
+
+        photo.style.animation =
+            "photoIn 1.5s forwards";
+
+        text.style.animation =
+            "fadeIn 2s 0.5s forwards";
+
+    }, 50);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
