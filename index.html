@@ -7,65 +7,111 @@
 
 <style>
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-family: sans-serif;
     color: white;
-    background: linear-gradient(135deg, #ff9fba, #b99cff);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9fba,
+            #b99cff
+        );
+
+    overflow: hidden;
 }
 
 .page {
     width: 90%;
+    max-width: 500px;
 }
 
 #page2,
 #page3,
 #page4,
-#page5 {
+#page5,
+#ending {
     display: none;
 }
+
+
+/* =========================
+   BUTTON
+========================= */
 
 button {
     padding: 15px 25px;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
+
     background: #ff5f91;
     color: white;
+
     font-size: 18px;
     margin-top: 15px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.2);
+
+    transition:
+        transform 0.2s;
 }
+
+button:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================
+   INPUT
+========================= */
 
 input {
     padding: 12px;
     border: none;
     border-radius: 15px;
+
     text-align: center;
     font-size: 16px;
 }
 
+
+/* =========================
+   STORY
+========================= */
+
 .story {
     opacity: 0;
-    animation: fadeIn 2s forwards;
+    animation:
+        fadeIn 2s forwards;
 }
 
 .story2 {
     opacity: 0;
-    animation: fadeIn 2s 1.5s forwards;
+    animation:
+        fadeIn 2s 1.5s forwards;
 }
 
 .story3 {
     opacity: 0;
-    animation: fadeIn 2s 3s forwards;
+    animation:
+        fadeIn 2s 3s forwards;
 }
 
 .continue {
     opacity: 0;
-    animation: fadeIn 2s 4.5s forwards;
+    animation:
+        fadeIn 2s 4.5s forwards;
 }
 
 @keyframes fadeIn {
@@ -82,9 +128,16 @@ input {
 
 }
 
+
+/* =========================
+   HEART
+========================= */
+
 .heart {
     font-size: 50px;
-    animation: heartBeat 1.2s infinite;
+
+    animation:
+        heartBeat 1.2s infinite;
 }
 
 @keyframes heartBeat {
@@ -105,61 +158,23 @@ input {
 
 
 /* =========================
-   PAGE 5 - MEMORIES
+   PAGE 5
+   MEMORIES
 ========================= */
 
 #page5 {
-    width: 90%;
+    width: 94%;
+    max-width: 500px;
 }
 
-.memory-title {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
 
-.memory-photo {
-    width: 90%;
-    max-width: 350px;
-    max-height: 55vh;
-    object-fit: cover;
-    border-radius: 20px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
-
-    opacity: 0;
-
-    animation:
-        photoIn 1.5s forwards;
-}
-
-@keyframes photoIn {
-
-    from {
-        opacity: 0;
-        transform: scale(0.85);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-}
-
-.memory-text {
-    font-size: 18px;
-    margin-top: 15px;
-
-    opacity: 0;
-
-    animation:
-        fadeIn 2s 0.5s forwards;
-}
+/* =========================
+   MUSIC INDICATOR
+========================= */
 
 .music-note {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 5px;
 
     animation:
         musicMove 1s infinite;
@@ -172,11 +187,259 @@ input {
     }
 
     50% {
-        transform: translateY(-8px);
+        transform: translateY(-7px);
     }
 
     100% {
         transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MEMORY COUNTER
+========================= */
+
+.memory-counter {
+
+    font-size: 15px;
+
+    opacity: 0.9;
+
+    margin-bottom: 5px;
+
+}
+
+
+/* =========================
+   MEMORY TITLE
+========================= */
+
+.memory-title {
+
+    font-size: 30px;
+
+    margin-top: 5px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================
+   MEMORY PHOTO
+========================= */
+
+.memory-photo {
+
+    width: 90%;
+
+    max-width: 350px;
+
+    max-height: 48vh;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.30);
+
+    opacity: 1;
+
+}
+
+
+/* Photo animation */
+
+.photoShow {
+
+    animation:
+        photoIn 0.8s forwards;
+
+}
+
+@keyframes photoIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.88);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================
+   MEMORY TEXT
+========================= */
+
+.memory-text {
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-top: 15px;
+
+    min-height: 55px;
+
+    animation:
+        textIn 0.8s forwards;
+
+}
+
+@keyframes textIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation:
+        floatHeart 4s linear forwards;
+
+}
+
+@keyframes floatHeart {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            scale(0.7);
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-100vh)
+            scale(1.3);
+
+    }
+
+}
+
+
+/* =========================
+   ENDING PAGE
+========================= */
+
+#ending {
+
+    width: 90%;
+
+    max-width: 500px;
+
+}
+
+
+.ending-heart {
+
+    font-size: 75px;
+
+    animation:
+        heartBeat 1.2s infinite;
+
+}
+
+
+.ending-title {
+
+    font-size: 32px;
+
+    margin:
+        15px 0;
+
+}
+
+
+.ending-text {
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-height: 650px) {
+
+    .memory-photo {
+
+        max-height: 40vh;
+
+    }
+
+    .memory-title {
+
+        font-size: 25px;
+
+    }
+
+    .memory-text {
+
+        font-size: 16px;
+
     }
 
 }
@@ -218,7 +481,6 @@ input {
 </div>
 
 
-
 <!-- =========================
      PAGE 2
 ========================= -->
@@ -242,7 +504,6 @@ input {
     </button>
 
 </div>
-
 
 
 <!-- =========================
@@ -295,7 +556,6 @@ input {
 </div>
 
 
-
 <!-- =========================
      PAGE 4
 ========================= -->
@@ -345,7 +605,6 @@ input {
 </div>
 
 
-
 <!-- =========================
      PAGE 5
      OUR MEMORIES
@@ -357,13 +616,20 @@ input {
         🎵 ❤️ 🎵
     </div>
 
+    <div
+        id="memoryCounter"
+        class="memory-counter"
+    >
+        Memory 1 / 10
+    </div>
+
     <h1 class="memory-title">
         Our Memories ❤️
     </h1>
 
     <img
         id="memoryPhoto"
-        class="memory-photo"
+        class="memory-photo photoShow"
         src="photo1.jpg"
     >
 
@@ -384,6 +650,40 @@ input {
 </div>
 
 
+<!-- =========================
+     ENDING
+========================= -->
+
+<div id="ending" class="page">
+
+    <div class="ending-heart">
+        ❤️
+    </div>
+
+    <h1 class="ending-title">
+        Happy Anniversary ❤️
+    </h1>
+
+    <p class="ending-text">
+
+        ဒီအမှတ်တရလေးတွေလိုပဲ<br>
+
+        နောင်လာမယ့်နေ့ရက်တိုင်းကိုလည်း<br>
+
+        အသဲတုံးလေးနဲ့
+        အတူတူဖြတ်သန်းချင်တယ် ❤️
+
+        <br><br>
+
+        ၂ နှစ်တင်မဟုတ်ဘူး...<br>
+
+        နောင်နှစ်ပေါင်းများစွာ
+        အတူတူရှိနေကြမယ်နော် 🥺💕
+
+    </p>
+
+</div>
+
 
 <!-- =========================
      MUSIC
@@ -400,7 +700,6 @@ input {
     >
 
 </audio>
-
 
 
 <script>
@@ -432,7 +731,6 @@ function checkPassword() {
 }
 
 
-
 /* =========================
    PAGE 2 → PAGE 3
 ========================= */
@@ -446,7 +744,6 @@ function startStory() {
         "block";
 
 }
-
 
 
 /* =========================
@@ -464,40 +761,8 @@ function nextPage() {
 }
 
 
-
 /* =========================
-   PAGE 4 → PAGE 5
-   MUSIC START
-========================= */
-
-function openMemories() {
-
-    document.getElementById("page4").style.display =
-        "none";
-
-    document.getElementById("page5").style.display =
-        "block";
-
-
-    let music =
-        document.getElementById("bgMusic");
-
-
-    music.play().catch(function(error) {
-
-        console.log(
-            "Music could not start:",
-            error
-        );
-
-    });
-
-}
-
-
-
-/* =========================
-   10 MEMORY PHOTOS
+   MEMORY DATA
 ========================= */
 
 let memories = [
@@ -558,6 +823,55 @@ let memories = [
 let currentMemory = 0;
 
 
+/* =========================
+   PRELOAD ALL MEMORY PHOTOS
+========================= */
+
+let preloadedImages = [];
+
+memories.forEach(function(memory) {
+
+    let img = new Image();
+
+    img.src = memory.photo;
+
+    preloadedImages.push(img);
+
+});
+
+
+/* =========================
+   PAGE 4 → PAGE 5
+   MUSIC START
+========================= */
+
+function openMemories() {
+
+    document.getElementById("page4").style.display =
+        "none";
+
+    document.getElementById("page5").style.display =
+        "block";
+
+
+    let music =
+        document.getElementById("bgMusic");
+
+
+    music.play().catch(function(error) {
+
+        console.log(
+            "Music could not start:",
+            error
+        );
+
+    });
+
+
+    startFloatingHearts();
+
+}
+
 
 /* =========================
    NEXT MEMORY
@@ -567,16 +881,145 @@ function nextMemory() {
 
     currentMemory++;
 
-    if (currentMemory >= memories.length) {
-        currentMemory = 0;
+
+    /* =====================
+       PHOTO 10 → ENDING
+    ===================== */
+
+    if (
+        currentMemory >= memories.length
+    ) {
+
+        document.getElementById("page5").style.display =
+            "none";
+
+        document.getElementById("ending").style.display =
+            "block";
+
+        return;
+
     }
 
-    document.getElementById("memoryPhoto").src =
+
+    let photo =
+        document.getElementById("memoryPhoto");
+
+    let text =
+        document.getElementById("memoryText");
+
+    let counter =
+        document.getElementById("memoryCounter");
+
+
+    /* Remove old animation */
+
+    photo.classList.remove("photoShow");
+
+    text.style.animation = "none";
+
+
+    /* Reset animation */
+
+    void photo.offsetWidth;
+
+    void text.offsetWidth;
+
+
+    /* Change photo */
+
+    photo.src =
         memories[currentMemory].photo;
 
-    document.getElementById("memoryText").innerHTML =
+
+    /* Change text */
+
+    text.innerHTML =
         memories[currentMemory].text;
+
+
+    /* Change counter */
+
+    counter.innerHTML =
+        "Memory " +
+        (currentMemory + 1) +
+        " / " +
+        memories.length;
+
+
+    /* Start animations */
+
+    photo.classList.add("photoShow");
+
+    text.style.animation =
+        "textIn 0.8s forwards";
+
 }
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHeart() {
+
+    let heart =
+        document.createElement("div");
+
+    heart.className =
+        "floating-heart";
+
+
+    let hearts = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💞"
+    ];
+
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+
+    heart.style.animationDuration =
+        (3 + Math.random() * 3) + "s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 6000);
+
+}
+
+
+function startFloatingHearts() {
+
+    setInterval(
+        createHeart,
+        900
+    );
+
+}
+
+
 </script>
 
 
