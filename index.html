@@ -567,47 +567,16 @@ function nextMemory() {
 
     currentMemory++;
 
-
-    if (
-        currentMemory >= memories.length
-    ) {
-
+    if (currentMemory >= memories.length) {
         currentMemory = 0;
-
     }
 
+    document.getElementById("memoryPhoto").src =
+        memories[currentMemory].photo;
 
-    let photo =
-        document.getElementById("memoryPhoto");
-
-    let text =
-        document.getElementById("memoryText");
-
-
-    photo.style.animation = "none";
-
-    text.style.animation = "none";
-
-
-    setTimeout(function() {
-
-        photo.src =
-            memories[currentMemory].photo;
-
-        text.innerHTML =
-            memories[currentMemory].text;
-
-
-        photo.style.animation =
-            "photoIn 1.5s forwards";
-
-        text.style.animation =
-            "fadeIn 2s 0.5s forwards";
-
-    }, 50);
-
+    document.getElementById("memoryText").innerHTML =
+        memories[currentMemory].text;
 }
-
 </script>
 
 
